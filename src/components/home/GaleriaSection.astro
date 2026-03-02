@@ -13,11 +13,12 @@
     </div>
 
     <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in-section">
-      <button class="galeria-btn active bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="aniversario">Aniversario</button>
-      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="dia-madre">Día de la Madre</button>
-      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="dia-padre">Día del Padre</button>
-      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="dia-nino">Día del Niño</button>
-      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="olimpiadas">Olimpiadas</button>
+      <button class="galeria-btn active bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="aniversario">Desfile de Aniversario</button>
+      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="cambridge">Visita de Cambridge</button>
+      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="city-tours">City Tours</button>
+      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="misa">Misa de Aniversario</button>
+      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="olimpiadas">Olimpiadas Deportivas</button>
+      <button class="galeria-btn bg-white hover:bg-colegio-yellow text-colegio-blue font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105" data-categoria="oxford">Visita de Oxford</button>
     </div>
 
     <div id="galeria-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in-section"></div>
@@ -54,11 +55,12 @@
 
 <script>
   const galeriasData: Record<string, { title: string; photos: string[] }> = {
-    'aniversario': { title: 'Aniversario', photos: [1,2,3,4,5,6].map(n => `/Galeria/ANIVERSARIO/${n}.jpeg`) },
-    'dia-madre':   { title: 'Día de la Madre', photos: [1,2,3,4,5,6].map(n => `/Galeria/DÍA DE LA MADRE/${n}.jpg`) },
-    'dia-padre':   { title: 'Día del Padre', photos: [1,2,3,4,5,6].map(n => `/Galeria/DÍA DEL PADRE/${n}.jpg`) },
-    'dia-nino':    { title: 'Día del Niño', photos: [1,2,3,4,5,6].map(n => `/Galeria/DÍA DEL NIÑO/${n}.jpg`) },
-    'olimpiadas':  { title: 'Olimpiadas', photos: [1,2,3,4,5,6].map(n => `/Galeria/OLIMPIADAS/${n}.jpg`) },
+    'aniversario': { title: 'Desfile de Aniversario', photos: [1,2,3,4,5,6].map(n => `/Galeria/ANIVERSARIO/${n}.jpg`) },
+    'cambridge':   { title: 'Visita de Cambridge', photos: [1,2,3,4,5,6].map(n => `/Galeria/CAMBRIDGE/${n}.jpeg`) },
+    'city-tours':   { title: 'City Tours', photos: [1,2,3,4,5,6].map(n => `/Galeria/CITY TOURS/${n}.jpeg`) },
+    'misa':    { title: 'Misa de Aniversario', photos: [1,2,3,4,5,6].map(n => `/Galeria/MISA/${n}.jpeg`) },
+    'olimpiadas':  { title: 'Olimpiadas Deportivas', photos: [1,2,3,4,5,6].map(n => `/Galeria/OLIMPIADAS/${n}.jpeg`) },
+    'oxford':  { title: 'Visita de Oxford', photos: [1,2,3,4,5,6].map(n => `/Galeria/OXFORD/${n}.jpeg`) },
   };
 
   const grid    = document.getElementById('galeria-grid');
