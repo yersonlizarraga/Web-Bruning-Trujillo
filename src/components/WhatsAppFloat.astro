@@ -2,41 +2,71 @@
 const departments = [
   {
     name: "Atención al Cliente",
-    phone: "51999928258",
+    phone: "51990259130",
     icon: "💬",
     schedules: [
-      "Lun - Vie: 8:00 a.m – 3:00 p.m  /  4:00 – 6:00 p.m",
+      "Lun - Vie: 7:00 a.m – 2:00 p.m  /  4:00 – 6:00 p.m",
       "Sábados: 8:00 a.m – 1:00 p.m"
     ]
   },
   {
     name: "Dirección General",
-    phone: "51999135300",
+    phone: "51990259131",
     icon: "👔",
     schedules: [
-      "Lun - Vie: 8:00 a.m – 3:00 p.m",
+      "Lun - Vie: 7:00 a.m – 2:30 p.m",
       "Sábados: 8:00 a.m – 1:00 p.m"
     ]
   },
   {
-    name: "Coordinación Académica Prim. – Sec.",
-    phone: "51986124565",
+    name: "Coordinación Académica Primaria",
+    phone: "51950408174",
     icon: "📚",
     schedules: [
-      "Lun - Vie: 8:00 a.m – 3:00 p.m",
+      "Lun - Vie: 7:00 a.m – 2:30 p.m",
       "Sábados: 8:00 a.m – 1:00 p.m"
     ]
-  }
+  },
+  {
+    name: "Coordinación Académica Secundaria",
+    phone: "51949171895",
+    icon: "📚",
+    schedules: [
+      "Lun - Vie: 7:00 a.m – 2:30 p.m",
+      "Sábados: 8:00 a.m – 1:00 p.m"
+    ]
+  },
+  {
+    name: "Departamento Psicología",
+    phone: "51949301048",
+    icon: "🧠",
+    schedules: [
+      "Lun - Vie: 7:00 a.m – 2:30 p.m",
+      "Sábados: 8:00 a.m – 1:00 p.m"
+    ]
+  },
+  {
+    name: "Coordinación de TI",
+    phone: "51951713633",
+    icon: "💻",
+    schedules: [
+      "Lun - Vie: 7:30 a.m – 2:30 p.m",
+      "Sábados: 8:00 a.m – 12:30 p.m"
+    ]
+  },
+
+
 ];
 ---
+  <div class="whatsapp-container">
 
-<!-- Botón flotante de WhatsApp -->
-<div class="whatsapp-container">
-  <!-- Panel de horarios de atención -->
+
+<!-- Panel de horarios de atención -->
   <div class="whatsapp-menu">
     <div class="menu-header">
       <strong>Horarios de Atención</strong>
     </div>
+
     <div class="menu-options">
       {departments.map((dept, i) => (
         <>
@@ -63,12 +93,23 @@ const departments = [
     </div>
   </div>
 
-  <!-- Botón de WhatsApp -->
+  <!-- Contenedor botón + mensaje -->
+  <div class="whatsapp-trigger">
+
+  <div class="whatsapp-message">
+    <span>¿Necesitas ayuda?<br><strong>Envíanos un mensaje</strong></span>
+  </div>
+
   <button 
     class="whatsapp-button"
     aria-label="Contactar por WhatsApp"
     id="whatsapp-toggle"
   >
+
+    
+
+    
+  
     <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor">
       <path d="M16.003 0C7.17 0 0.008 7.162 0.008 15.997c0 2.84 0.748 5.508 2.052 7.82L0.142 31.95l8.375-2.185c2.19 1.166 4.692 1.831 7.486 1.831 8.833 0 15.995-7.162 15.995-15.997S24.836 0 16.003 0zm9.366 22.595c-0.393 1.104-2.312 2.148-3.213 2.245-0.825 0.088-1.893 0.127-3.052-0.193-0.703-0.193-1.604-0.452-2.755-0.883-4.836-1.822-8.004-6.674-8.246-6.98-0.232-0.306-1.922-2.579-1.922-4.92 0-2.342 1.209-3.486 1.648-3.962 0.438-0.476 0.955-0.595 1.274-0.595 0.319 0 0.638 0.003 0.916 0.014 0.294 0.012 0.69-0.112 1.079 0.827 0.398 0.962 1.362 3.303 1.482 3.543 0.12 0.24 0.2 0.52 0.04 0.825-0.16 0.306-0.24 0.496-0.478 0.767-0.239 0.271-0.502 0.606-0.717 0.814-0.239 0.231-0.487 0.481-0.209 0.943 0.278 0.462 1.235 2.036 2.649 3.298 1.82 1.623 3.354 2.126 3.832 2.366 0.478 0.24 0.757 0.2 1.035-0.12 0.278-0.32 1.195-1.395 1.514-1.871 0.319-0.476 0.638-0.397 1.076-0.24 0.438 0.157 2.779 1.311 3.257 1.551 0.478 0.24 0.797 0.36 0.916 0.56 0.12 0.2 0.12 1.151-0.273 2.255z"/>
     </svg>
@@ -79,6 +120,13 @@ const departments = [
 
   <!-- Pulso animado -->
   <div class="whatsapp-pulse"></div>
+  <!-- mascota -->
+  <img 
+    src="/buho.png" 
+    alt="Mascota del colegio"
+    class="whatsapp-mascot"
+  >
+
 </div>
 
 <script>
@@ -138,7 +186,8 @@ const departments = [
   }
 
   .whatsapp-menu.active {
-    max-height: 600px;
+    max-height: 1000px;
+    overflow-y: auto;
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: all;
@@ -344,4 +393,77 @@ const departments = [
       display: none;
     }
   }
+  .whatsapp-message {
+  background: #f1f1f1;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  margin-right: 10px;
+  animation: floatMessage 3s ease-in-out infinite;
+  position: relative;
+}
+
+/* triangulito */
+.whatsapp-message::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 6px solid #f1f1f1;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+/* animación */
+@keyframes floatMessage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+.whatsapp-trigger{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  position:relative;
+}
+
+.whatsapp-message{
+  background:white;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:13px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.whatsapp-mascot{
+  position:absolute;
+  width:75px;
+  bottom:45px;
+  right:-8px;
+  z-index:3;
+  pointer-events:none;
+  /*animation: mascotFloat 2.5s ease-in-out infinite;*/
+}
+
+/* animación más natural */
+@keyframes mascotFloat{
+  0%{ transform:translateY(0px); }
+  50%{ transform:translateY(-8px); }
+  100%{ transform:translateY(0px); }
+}
+
+.whatsapp-button.active + .whatsapp-pulse + .whatsapp-mascot{
+  animation: mascotWave 0.6s ease;
+}
+
+@keyframes mascotWave{
+  0%{ transform:rotate(0deg); }
+  25%{ transform:rotate(-10deg); }
+  50%{ transform:rotate(10deg); }
+  75%{ transform:rotate(-5deg); }
+  100%{ transform:rotate(0deg); }
+}
 </style>
