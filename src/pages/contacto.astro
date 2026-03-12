@@ -407,12 +407,10 @@ ${mensaje}
 
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
-      mostrarMensaje("Redirigiendo a WhatsApp...", "success");
+      // abrir directamente (funciona en iPhone)
+      window.location.href = url;
 
-      setTimeout(() => {
-        window.open(url, "_blank");
-        contactForm.reset();
-      }, 1200);
+      contactForm.reset();
     });
   }
 
